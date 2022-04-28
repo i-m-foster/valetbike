@@ -2,7 +2,15 @@
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
       Welcome to ValetBike!
-    </div>  
+    </div>
+    <p>This is Irene!</p>
+    <br>
+    <div class="flexbox vertical stretch">
+      <% Bike.all.each do |b| %>
+        <p>Bike: <%=b.identifier %> Current Station: <%=b.current_station_id %></p> 
+        <%end%>
+    </div>
+    <br>
     <div class="flexbox vertical stretch">
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
